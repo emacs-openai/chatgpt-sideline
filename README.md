@@ -25,7 +25,7 @@ This package is available from [JCS-ELPA](https://jcs-emacs.github.io/jcs-elpa/)
 Install from these repositories then you should be good to go!
 
 Normally, you don't need to add `(require 'chatgpt-sideline)` to your
-configuration since most `'chatgpt-sideline` commands are autoload and can be
+configuration since most `chatgpt-sideline` commands are autoload and can be
 called without loading the module!
 
 #### use-package
