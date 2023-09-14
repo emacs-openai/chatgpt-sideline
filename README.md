@@ -6,6 +6,11 @@
 
 [![CI](https://github.com/emacs-openai/chatgpt-sideline/actions/workflows/test.yml/badge.svg)](https://github.com/emacs-openai/chatgpt-sideline/actions/workflows/test.yml)
 
+## 🏆 Features
+
+- Edit history
+- Copy text
+
 ## 💾 Installation
 
 #### package.el
