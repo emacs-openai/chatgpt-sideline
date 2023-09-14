@@ -73,7 +73,7 @@ Argument COMMAND is required in sideline backend."
 (defun chatgpt-sideline--show (callback &rest _)
   "Execute CALLBACK to display with sideline."
   (when (and chatgpt-chat-history
-             (eq major-mode 'chatgpt-mode))
+             (eq major-mode #'chatgpt-mode))
     (cond ((chatgpt-sideline--editable-p)
            (funcall callback '("📝 Edit")))
           ((chatgpt-sideline--copyable-p)
