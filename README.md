@@ -4,6 +4,8 @@
 # chatgpt-sideline
 > Sideline support for chatgpt
 
+[![CI](https://github.com/emacs-openai/chatgpt-sideline/actions/workflows/test.yml/badge.svg)](https://github.com/emacs-openai/chatgpt-sideline/actions/workflows/test.yml)
+
 ## 💾 Installation
 
 #### package.el

@@ -57,45 +57,18 @@ Argument COMMAND is required in sideline backend."
 (defun chatgpt-sideline--on-action (candidate &rest _)
   "React to action when CANDIDATE is clicked."
   (pcase candidate
-    ("📝 Edit" )
-    ("📋 Copy" (kill-new (chatgpt-sideline--current-content)))))
-
-(defun chatgpt-sideline--current-chat-point ()
-  "Return current chat point."
-  (let ((chat-point))
-    (cl-some (lambda (pt)
-               (when (<= pt (point))
-                 (setq chat-point pt)))
-             chatgpt-chat-points)
-    chat-point))
-
-(defun chatgpt-sideline--chat-point-index (chat-point)
-  "Return CHAT-POINT's index."
-  (cl-position chat-point (chatgpt-chat-points)))
-
-(defun chatgpt-sideline--current-message ()
-  "Return current message."
-  (let* ((chat-point (chatgpt-sideline--current-chat-point))
-         (index (chatgpt-sideline--chat-point-index chat-point)))
-    (elt chatgpt-chat-history index)))
-
-(defun chatgpt-sideline--current-content ()
-  "Return current content."
-  (let ((msg (chatgpt-sideline--current-message)))
-    (alist-get 'content msg)))
-
-(defun chatgpt-sideline--current-role ()
-  "Return current role."
-  (let ((msg (chatgpt-sideline--current-message)))
-    (alist-get 'role msg)))
+    ("📝 Edit" (chatgpt-edit-start chatgpt-instance))
+    ("📋 Copy"
+     (kill-new (chatgpt-current-content))
+     (let ((message-log-max)) (message "Copied!")))))
 
 (defun chatgpt-sideline--editable-p ()
   "Return non-nil when current section is ediatble."
-  (string= (chatgpt-user) (chatgpt-sideline--current-role)))
+  (string= (chatgpt-user) (chatgpt-current-role)))
 
 (defun chatgpt-sideline--copyable-p ()
   "Return non-nil when current section is copyable."
-  (not (string= (chatgpt-user) (chatgpt-sideline--current-role))))
+  (not (string= (chatgpt-user) (chatgpt-current-role))))
 
 (defun chatgpt-sideline--show (callback &rest _)
   "Execute CALLBACK to display with sideline."
