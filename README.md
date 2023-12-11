@@ -53,7 +53,7 @@ Copy all `.el` files in this repository to `~/.emacs.d/lisp` and add the followi
 (require 'chatgpt-sideline)
 ```
 
-## Quickstart
+## 💾 Quickstart
 
 ```elisp
 (use-package chatgpt-sideline
