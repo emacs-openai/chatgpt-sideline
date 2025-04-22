@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "chatgpt-sideline"
          "0.1.0"
          "Sideline support for chatgpt")
