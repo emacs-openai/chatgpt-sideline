@@ -15,7 +15,7 @@
 (source 'gnu)
 (source 'melpa)
 
-(depends-on "emacs" "27.1")
+(depends-on "emacs" "28.1")
 (depends-on "chatgpt")
 (depends-on "sideline")
 
